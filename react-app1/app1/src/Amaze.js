@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 
 // this is a functional/UI component
-const Amaze = (props) => {
-  const { amaze } = props;
+const Amaze = ({amaze}) => {
   const amazingList = amaze.map(amaze => {
     return (
       <div className="amaze" key={ amaze.id }> 
