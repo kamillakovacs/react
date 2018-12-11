@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Amaze from './Amaze';
+import AddAmaze from './AddAmaze'
 
 class App extends Component {
   state = {
@@ -15,6 +16,7 @@ class App extends Component {
         <h1>My first React app</h1>
         <p>Hello</p>
         <Amaze amaze={this.state.amaze} />
+        <AddAmaze />
       </div>
     );
   }
