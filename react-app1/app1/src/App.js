@@ -10,13 +10,21 @@ class App extends Component {
       { name: 'Sztiven', age: 16, gender: 'male', id: 3 }
     ]
   }
+  addAmaze = (amazing) => {
+    amazing.id = Math.random();
+    let amaze = [...this.state.amaze, amazing] // creates a copy of the amaze array in state, adn adds the new amazing element
+    this.setState({
+      amaze: amaze
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>My first React app</h1>
         <p>Hello</p>
         <Amaze amaze={this.state.amaze} />
-        <AddAmaze />
+        <AddAmaze addAmaze={this.addAmaze}/>
       </div>
     );
   }
