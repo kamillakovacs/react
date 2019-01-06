@@ -18,12 +18,21 @@ class App extends Component {
     })
   }
 
+  deleteAmazingThings = (id) => {
+    let amaze = this.state.amaze.filter(amazing => {
+      return amazing.id !== id
+    });
+    this.setState({
+      amaze: amaze
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>My first React app</h1>
         <p>Hello</p>
-        <Amaze amaze={this.state.amaze} />
+        <Amaze deleteAmazingThings={this.deleteAmazingThings} amaze={this.state.amaze} />
         <AddAmaze addAmaze={this.addAmaze}/>
       </div>
     );
